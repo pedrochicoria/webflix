@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="project2-code-ear:ear exploded">
+    <output-path>$PROJECT_DIR$/project2-code-ear/target/project2-code-ear-0.0.1-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="project2-code-ear/javaeeApplication/JavaEE" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/project2-code-ear/target/project2-code-ear-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="archive" name="project2-code-web-0.0.1-SNAPSHOT.war">
+        <element id="artifact" artifact-name="project2-code-web:war exploded" />
+      </element>
+      <element id="archive" name="project2-code-business-0.0.1-SNAPSHOT.jar">
+        <element id="artifact" artifact-name="project2-code-business:ejb exploded" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
+        <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0.1" />
+        <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.0.1" />
+        <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
+      </element>
+      <element id="archive" name="project2-code-data-0.0.1-SNAPSHOT.jar">
+        <element id="artifact" artifact-name="project2-code-data:ejb exploded" />
+      </element>
+    </root>
+  </artifact>
+</component>

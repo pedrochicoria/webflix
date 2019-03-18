@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>IS</groupId>
+	<artifactId>project2-code-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>project2-code-parent</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- 2. Definir modulos associados a este pom "pai" -->
+	<modules>
+		<module>project2-code-web</module>
+		<module>project2-code-business</module>
+		<module>project2-code-data</module>
+		<module>project2-code-ear</module>
+	</modules>
+
+	<!-- 3. Definir propriedades, por exemplo variáveis com as versoes de API 
+		.. EJB .. War etc -->
+	<properties>
+		<!-- encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--java version -->
+		<java-version>1.8</java-version>
+
+		<!-- plugin versions -->
+		<ejb-plugin-version>3.0.1</ejb-plugin-version>
+		<war-plugin-version>3.2.2</war-plugin-version>
+		<ear-plugin-version>3.0.1</ear-plugin-version>
+		<compiler-plugin-version>3.8.0</compiler-plugin-version>
+		<wildfly-plugin-version>1.2.2.Final</wildfly-plugin-version>
+
+		<!-- dependency versions -->
+		<javaee-api-version>8.0</javaee-api-version>
+
+		<!-- EJB spec version -->
+		<ejb-spec-version>3.2</ejb-spec-version>
+
+		<!-- Postgres sql -->
+		<!-- <postgreslq.version>9.1-901-1.jdbc4</postgreslq.version> -->
+
+		<!-- Hibernate -->
+		<!-- <hibernate.version>5.3.6.Final</hibernate.version> -->
+
+		<!-- Logs et al. -->
+		<slf4j.version>1.7.25</slf4j.version>
+		<slf4jlog4.version>1.7.25</slf4jlog4.version>
+
+		<junit-version>4.12</junit-version>
+
+		<hibernate.validator.version>6.0.2.Final</hibernate.validator.version>
+		<hibernate-entitymanager>5.3.6.Final</hibernate-entitymanager>
+		<hibernatecore.version>5.3.6.Final</hibernatecore.version>
+		<hibernate.commons.annotations.version>5.0.4.Final</hibernate.commons.annotations.version>
+		<hibernate.jpa.api>1.0.1.Final</hibernate.jpa.api>
+		<hibernate-jpamodelgen>5.3.6.Final</hibernate-jpamodelgen>
+		<validation.api>2.0.1.Final</validation.api>
+		<cdi-api>2.0.SP1</cdi-api>
+		<jboss.logging>3.3.2.Final</jboss.logging>
+		<mysql.connector.java>8.0.12</mysql.connector.java>
+
+		<jaxb-api>2.3.0</jaxb-api>
+		<jaxb-core>2.3.0.1</jaxb-core>
+		<jaxb-impl>2.3.0.1</jaxb-impl>
+		<activation>1.1.1</activation>
+
+
+		<server.port>9990</server.port>
+	</properties>
+
+
+	<!-- 4. Dependencias do pai -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${javaee-api-version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4jlog4.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit-version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernatecore.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+			<dependency>
+				<groupId>org.hibernate.validator</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate.validator.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
+			<dependency>
+				<groupId>org.hibernate.common</groupId>
+				<artifactId>hibernate-commons-annotations</artifactId>
+				<version>${hibernate.commons.annotations.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>${hibernate.jpa.api}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate-entitymanager}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${validation.api}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
+			<dependency>
+				<groupId>org.jboss.logging</groupId>
+				<artifactId>jboss-logging</artifactId>
+				<version>${jboss.logging}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.connector.java}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-jpamodelgen</artifactId>
+				<version>${hibernate-jpamodelgen}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.enterprise</groupId>
+				<artifactId>cdi-api</artifactId>
+				<version>${cdi-api}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb-api}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-core</artifactId>
+				<version>${jaxb-core}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>${jaxb-impl}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<version>${activation}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- 5. Plugins a serem usados -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- <plugin> <groupId>org.wildfly.plugins</groupId> <artifactId>wildfly-maven-plugin</artifactId> 
+					<version>${wildfly-plugin-version}</version> </plugin> -->
+
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>${wildfly-plugin-version}</version>
+					<configuration>
+						<skip>false</skip>
+						<hostname>localhost</hostname>
+						<port>${server.port}</port>
+						<username>root</username>
+						<password>is</password>
+						<filename>${project.name}.ear</filename>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>${ear-plugin-version}</version>
+					<configuration>
+						<version>8</version>
+						<generateApplicationXml>true</generateApplicationXml>
+						<defaultLibBundleDir>lib/</defaultLibBundleDir>
+						<finalName>${project.name}</finalName>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+						<modules>
+							<webModule>
+								<groupId>IS</groupId>
+								<artifactId>project2-code-web</artifactId>
+							</webModule>
+							<ejbModule>
+								<groupId>IS</groupId>
+								<artifactId>project2-code-business</artifactId>
+							</ejbModule>
+							<ejbModule>
+								<groupId>IS</groupId>
+								<artifactId>project2-code-data</artifactId>
+							</ejbModule>
+						</modules>
+					</configuration>
+				</plugin>
+
+				<!-- compiler plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler-plugin-version}</version>
+					<configuration>
+						<source>${java-version}</source>
+						<target>${java-version}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+
+				<!-- maven ear plugin -->
+				<!-- <plugin> -->
+				<!-- <groupId>org.apache.maven.plugins</groupId> -->
+				<!-- <artifactId>maven-ear-plugin</artifactId> -->
+				<!-- <version>${ear-plugin-version}</version> -->
+				<!-- <configuration> -->
+				<!-- <version>7</version> -->
+				<!-- <generateApplicationXml>false</generateApplicationXml> -->
+				<!-- <defaultLibBundleDir>lib/</defaultLibBundleDir> -->
+				<!-- </configuration> -->
+				<!-- </plugin> -->
+
+
+				<!-- ejb plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>${ejb-plugin-version}</version>
+					<configuration>
+						<ejbVersion>${ejb-spec-version}</ejbVersion>
+					</configuration>
+				</plugin>
+
+				<!-- war plugin -skinny wars mode! -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${war-plugin-version}</version>
+					<!-- configure to use skinny war use case -->
+					<configuration>
+						<packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>

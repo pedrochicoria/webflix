@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>IS</groupId>
+		<artifactId>project2-code-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>project2-code-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<!-- Adicionar os modulos que criámos -->
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>IS</groupId>
+			<artifactId>project2-code-web</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>IS</groupId>
+			<artifactId>project2-code-business</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>IS</groupId>
+			<artifactId>project2-code-data</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<!-- <finalName>project2-code-firstear</finalName> -->
+		<plugins>
+			<!--Ear plugin -creating the ear - watch out skinny WARS! -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-ear-plugin</artifactId> -->
+			<!-- <configuration> -->
+			<!-- <finalName>${project.name}</finalName> -->
+			<!-- <modules> -->
+			<!-- <webModule> -->
+			<!-- <groupId>IS</groupId> -->
+			<!-- <artifactId>project2-code-web</artifactId> -->
+			<!-- </webModule> -->
+			<!-- <ejbModule> -->
+			<!-- <groupId>IS</groupId> -->
+			<!-- <artifactId>project2-code-business</artifactId> -->
+			<!-- </ejbModule> -->
+			<!-- <ejbModule> -->
+			<!-- <groupId>IS</groupId> -->
+			<!-- <artifactId>project2-code-data</artifactId> -->
+			<!-- </ejbModule> -->
+			<!-- </modules> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-ear-plugin</artifactId> -->
+			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

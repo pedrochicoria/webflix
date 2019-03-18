@@ -1,0 +1,6 @@
+ejb/EmailsEJBInterface.class
+ejb/EmailsEJB.class
+ejb/UsersEJBInterface.class
+ejb/ContentEJB.class
+ejb/UsersEJB.class
+ejb/ContentEJBInterface.class

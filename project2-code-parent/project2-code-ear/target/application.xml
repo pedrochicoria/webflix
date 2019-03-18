@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/ http://xmlns.jcp.org/xml/ns/javaee/application_8.xsd" version="8">
+  <display-name>project2-code-ear</display-name>
+  <module>
+    <web>
+      <web-uri>IS-project2-code-web-0.0.1-SNAPSHOT.war</web-uri>
+      <context-root>/project2-code-web</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>IS-project2-code-business-0.0.1-SNAPSHOT.jar</ejb>
+  </module>
+  <module>
+    <ejb>IS-project2-code-data-0.0.1-SNAPSHOT.jar</ejb>
+  </module>
+  <library-directory>lib/</library-directory>
+</application>

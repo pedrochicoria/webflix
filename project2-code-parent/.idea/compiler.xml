@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="project2-code-business" />
+        <module name="project2-code-data" />
+        <module name="project2-code-ear" />
+        <module name="project2-code-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="project2-code-business" target="1.8" />
+      <module name="project2-code-data" target="1.8" />
+      <module name="project2-code-ear" target="1.5" />
+      <module name="project2-code-parent" target="1.5" />
+      <module name="project2-code-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
