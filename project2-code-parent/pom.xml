@@ -62,7 +62,7 @@
 		<validation.api>2.0.1.Final</validation.api>
 		<cdi-api>2.0.SP1</cdi-api>
 		<jboss.logging>3.3.2.Final</jboss.logging>
-		<mysql.connector.java>8.0.12</mysql.connector.java>
+		<mysql.connector.java>8.0.16</mysql.connector.java>
 
 		<jaxb-api>2.3.0</jaxb-api>
 		<jaxb-core>2.3.0.1</jaxb-core>
